@@ -1,0 +1,14 @@
+body { background: #010c4e; }
+.Regular-error {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.Regular-errorimg {
+	max-width: 1200px;
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}

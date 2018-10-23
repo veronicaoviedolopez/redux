@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Promesas</title>
+   </head>
+<body>
+    <div id='app'> </div>
+    <script type="text/javascript">
+/*         const promesa = new Promise((resolve, reject)  => {
+            reject('herrositodescola');
+        });
+        console.log(promesa);
+        promesa.then(
+            (response) => {
+                alert(response);
+            },
+            (error) => {
+                alert(`fallo por: ${error}`);
+            }
+        );
+ */
+       /*  fetch('https://jsonplaceholder.typicode.com/users')
+            .then(
+            (res) => {
+                res.json().then(
+                    (response) => 
+                    {
+                        fetch('https://jsonplaceholder.typicode.com/comments')
+                        .then(
+                            (response => {
+                                response.json()
+                                .then(r => {
+                                    console.log(r);
+                                })
+                            })
+                        );
+                    },
+                    (error) => console.log(error)
+                );
+            },
+            (error) => {
+
+        
+        ); */
+
+//Async Away
+
+//1 hacer funcion desplegar usuarios:
+    const desplegarUsuarios= async () =>{
+        try{
+            let res = await fetch('https://jsonplaceholder.typicode.com/user/1');
+            let json =  await res.json();
+            console.log(json); 
+        }
+        catch(err){
+            return console.log('error en ', err);
+        }
+        try{
+            res = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+            json = await res.json();
+            console.log(json); 
+        }
+        catch(err){
+            return console.log(`Error en ` ${err});
+        }
+        
+    };
+    desplegarUsuarios();
+
+    //identificar la promesa y ala refrecnoa asignarle que es async para q se prepare.
+    //identificar quien es la llamada asyncrona, la llamada async es el fetch y la igualare a una
+    //constante y le digo que espere (await) 
+    console.log('esto eesta despues de la promesas.');
+    </script>
+</body>
+</html>
